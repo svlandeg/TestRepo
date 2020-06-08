@@ -27,7 +27,12 @@ jobs:
               },
               "more-info-needed": {
                 "delay": "PT3M",
-                "message": "This issue has been automatically closed because further info wat not provided.",
+                "message": "This issue has been automatically closed because further info was not provided.",
+                "remove_label": true
+              },
+              "rename": {
+                "delay": "PT1M",
+                "message": "This issue has been automatically closed because that is what we do.",
                 "remove_label": true
               }
             }
