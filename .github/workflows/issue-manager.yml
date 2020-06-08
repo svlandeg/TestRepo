@@ -1,0 +1,35 @@
+name: Issue Manager
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  issue_comment:
+    types:
+      - created
+      - edited
+  issues:
+    types:
+      - labeled
+
+jobs:
+  issue-manager:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tiangolo/issue-manager@0.2.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config: >
+            {
+              "answered": {
+                "delay": "PT1M",
+                "message": "This issue has been automatically closed because it was answered and there was no follow-up discussion.",
+                "remove_label": true
+              }
+            },
+            {
+              "more-info-needed": {
+                "delay": "PT3M",
+                "message": "This issue has been automatically closed because further info wat not provided.",
+                "remove_label": true
+              }
+            }
