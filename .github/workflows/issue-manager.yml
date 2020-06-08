@@ -24,9 +24,7 @@ jobs:
                 "delay": "PT1M",
                 "message": "This issue has been automatically closed because it was answered and there was no follow-up discussion.",
                 "remove_label": true
-              }
-            },
-            {
+              },
               "more-info-needed": {
                 "delay": "PT3M",
                 "message": "This issue has been automatically closed because further info wat not provided.",
