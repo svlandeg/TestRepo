@@ -15,7 +15,7 @@ jobs:
   issue-manager:
     runs-on: ubuntu-latest
     steps:
-      - uses: tiangolo/issue-manager@0.2.1
+      - uses: tiangolo/issue-manager@0.3.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           config: >
@@ -23,12 +23,14 @@ jobs:
               "answered": {
                 "delay": "PT1M",
                 "message": "This issue has been automatically closed because it was answered and there was no follow-up discussion.",
-                "remove_label": true
+                "remove_label_on_comment": true,
+                "remove_label_on_close": false
               },
               "more-info-needed": {
                 "delay": "PT3M",
                 "message": "This issue has been automatically closed because further info was not provided.",
-                "remove_label": true
+                "remove_label_on_comment": true,
+                "remove_label_on_close": true
               },
               "rename": {
                 "delay": "PT1M",
