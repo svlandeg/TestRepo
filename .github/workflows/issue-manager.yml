@@ -34,7 +34,6 @@ jobs:
               },
               "rename": {
                 "delay": "PT1M",
-                "message": "This issue has been automatically closed because that is what we do.",
-                "remove_label": true
+                "message": "This issue has been automatically closed because that is what we do."
               }
             }
